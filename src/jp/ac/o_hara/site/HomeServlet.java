@@ -19,6 +19,12 @@ public class HomeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html;charset=UTF-8");
+		
+		SimpleDAO dao = new SimpleDAO();
+		String sql = "CREATE TABLE IF NOT EXISTS sample(name VARCHAR(32))";
+		dao.execSQL(sql);
+		sql = "INSERT INTO sample(name) VALUES('hoge')";
+		dao.execSQL(sql);
 
 		req.getRequestDispatcher("WEB-INF/jsp/home.jsp").forward(req, resp);
 	}
