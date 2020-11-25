@@ -36,19 +36,15 @@ public class SimpleDAO {
 	//特定のSQLを実行する
 	public final boolean execSQL( String sql ) {
 		Connection db = this.createConnection();
-    	PreparedStatement ps = null;
+    	
     	boolean result = false;
     	if( !sql.startsWith("CREATE") && !sql.startsWith("DROP") && !sql.startsWith("INSERT") && !sql.startsWith("UPDATE")) { return result; }
-    	try {
-			ps = db.prepareStatement(sql);
+    	try (PreparedStatement ps = db.prepareStatement(sql)) {
 			ps.executeUpdate();
 			result = true;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			try {
-				if ( ps != null ) { ps.close(); }
-			} catch (SQLException e) {}
 			this.closeConnection(db);
 		}
     	return result;
