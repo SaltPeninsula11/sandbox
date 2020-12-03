@@ -27,11 +27,11 @@ public class CalendarEntryTestListener implements ServletContextListener {
     	if(dao.execSQL("CREATE TABLE IF NOT EXISTS calentry (id IDENTITY, date DATE, userID VARCHAR(64), moduleName VARCHAR(32))")) {
     		dao.create(new CalendarBean(Date.valueOf("2020-12-19"), "hoge", "Dummy"));
     		dao.create(new CalendarBean(Date.valueOf("2020-12-01"), "hoge", "Dummy"));
-    		dao.create(new CalendarBean(Date.valueOf("2020-12-01"), "hoge", "Dummy"));
-    		dao.create(new CalendarBean(Date.valueOf("2020-12-01"), "hoge", "Dummy"));
-    		dao.create(new CalendarBean(Date.valueOf("2020-12-23"), "hoge", "Dummy"));
-    		dao.create(new CalendarBean(Date.valueOf("2020-12-23"), "hoge", "Dummy"));
-    		dao.create(new CalendarBean(Date.valueOf("2020-12-23"), "all", "Dummy"));
+    		dao.create(new CalendarBean(Date.valueOf("2020-12-02"), "hoge", "Dummy"));
+    		dao.create(new CalendarBean(Date.valueOf("2020-12-03"), "hoge", "Dummy"));
+    		dao.create(new CalendarBean(Date.valueOf("2020-12-04"), "hoge", "Dummy"));
+    		dao.create(new CalendarBean(Date.valueOf("2020-12-05"), "hoge", "Dummy"));
+    		dao.create(new CalendarBean(Date.valueOf("2020-12-22"), "all", "Dummy"));
     		dao.create(new CalendarBean(Date.valueOf("2020-12-23"), "all", "Dummy"));
     		dao.create(new CalendarBean(Date.valueOf("2020-12-24"), "all", "Dummy"));
     		dao.create(new CalendarBean(Date.valueOf("2020-12-31"), "hoge", "Dummy"));
