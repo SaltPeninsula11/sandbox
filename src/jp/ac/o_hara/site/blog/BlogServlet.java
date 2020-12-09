@@ -8,22 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import jp.ac.o_hara.site.ContentBean;
-
 /**
  * Servlet implementation class BlogServlet
  */
 @WebServlet("/BlogServlet")
 public class BlogServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public BlogServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -33,8 +23,7 @@ public class BlogServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html);charset=UTF-8");
 		
-		ContentBean content = 
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getRequestDispatcher("WEB-INF/jsp/home.jsp").forward(request, response);
 	}
 
 	/**
